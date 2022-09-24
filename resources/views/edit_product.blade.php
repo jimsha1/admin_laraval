@@ -1,0 +1,45 @@
+@extends('index')
+@section('edit_product')
+<div class="col-md-6">
+<form action="{{route('update_product')}}" method="post" >
+                  @csrf
+                <div class="card-body">
+                 <input type="hidden" name="p_id" value="{{$products->id}}">  
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Category</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter category" name="category" value="{{$products->category}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Product_name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter product_name" name="pro_name" value="{{$products->pro_name}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Price</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter price" name="price" value="{{$products->price}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Exp.date</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter exp.date" name="date" value="{{$products->exp_date}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Quantity</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter quantity" name="quantity" value="{{$products->quantity}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Stock</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter stock" name="stock" value="{{$products->stock}}">
+                  </div>
+                  
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                </div>
+            </form>
+</div>
+              @endsection
